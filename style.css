@@ -1,25 +1,49 @@
 /*--------------------------------- reset ---------------------------------*/
-*{
+* {
      padding: 0;
      margin: 0;
      box-sizing: border-box;
 }
 
+/*--------------------------------- common ---------------------------------*/
+
+body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+
+     background-color: #2f363e;
+}
+
 /*--------------------------------- clock ---------------------------------*/
 
+.clock {
+     position: relative;
+     width: 280px;
+     height: 280px;
+     border-radius: 50%;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: scale(2);
+     box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.5);
+}
+
 /* second */
-.circle-second{
+.circle-second {
      color: #ff9f43;
 }
 
 /* minute */
 
-.circle-minute{
+.circle-minute {
      color: #54a0ff;
 }
 
 /* hour */
 
-.circle-hour{
+.circle-hour {
      color: #1dd1a1;
 }
