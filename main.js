@@ -36,7 +36,7 @@ function tick() {
      min_dot.style.transform = `rotate(${m * 6}deg)`;
      sec_dot.style.transform = `rotate(${s * 6}deg)`;
 
-     // Rotate needls to match each hand
+     // Rotate needles to match each hand
      hr_needle.style.transform = `rotate(${h * 30}deg)`;
      min_needle.style.transform = `rotate(${m * 6}deg)`;
      sec_needle.style.transform = `rotate(${s * 6}deg)`;
