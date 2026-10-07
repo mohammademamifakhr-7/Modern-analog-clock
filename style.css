@@ -82,19 +82,19 @@ body {
 
 /* second */
 .circle-second {
-     color: var(--clr-circle-sec);
+     color: var(--clr-sec);
 }
 
 /* minute */
 
 .circle-minute {
-     color: var(--clr-circle-min);
+     color: var(--clr-min);
 }
 
 /* hour */
 
 .circle-hour {
-     color: var(--clr-circle-hr);
+     color: var(--clr-hr);
 }
 
 /* svg */
