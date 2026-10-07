@@ -8,6 +8,11 @@ const sec_dot = document.querySelector('.sec-dot');
 const min_dot = document.querySelector('.min-dot');
 const hr_dot = document.querySelector('.hr-dot');
 
+// Get needle elements (hour, minute, second needle)
+const sec_needle = document.querySelector('.needle-sec');
+const min_needle = document.querySelector('.needle-min');
+const hr_needle = document.querySelector('.needle-hr');
+
 // Main clock loop
 function tick() {
      // Current date and time
@@ -30,6 +35,11 @@ function tick() {
      hr_dot.style.transform = `rotate(${h * 30}deg)`;
      min_dot.style.transform = `rotate(${m * 6}deg)`;
      sec_dot.style.transform = `rotate(${s * 6}deg)`;
+
+     // Rotate needls to match each hand
+     hr_needle.style.transform = `rotate(${h * 30}deg)`;
+     min_needle.style.transform = `rotate(${m * 6}deg)`;
+     sec_needle.style.transform = `rotate(${s * 6}deg)`;
 
      // Loop on next frame
      requestAnimationFrame(tick);

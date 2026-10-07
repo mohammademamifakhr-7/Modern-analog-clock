@@ -145,3 +145,52 @@ svg circle {
      box-shadow: 0 0 15px currentColor;
      margin-top: -2px;
 }
+
+/*----------- needles -----------*/
+
+.needle-sec {
+     color: var(--clr-sec);
+}
+
+.needle-min {
+     color: var(--clr-min);
+}
+
+.needle-hr {
+     color: var(--clr-hr);
+}
+
+.needles {
+     position: absolute;
+     display: flex;
+     justify-content: center;
+}
+
+/* needls icon */
+
+.needles i {
+     width: 3px;
+     height: 50%;
+     border-radius: 5px;
+     background-color: currentColor;
+     transform-origin: bottom;
+     transform: scale(0.5);
+}
+
+.needle-sec {
+     width: 200px;
+     height: 200px;
+     z-index: 50;
+}
+
+.needle-min {
+     width: 170px;
+     height: 170px;
+     z-index: 40;
+}
+
+.needle-hr {
+     width: 140px;
+     height: 140px;
+     z-index: 30;
+}
