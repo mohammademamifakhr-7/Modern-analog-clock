@@ -106,3 +106,18 @@ svg circle {
      transform: translate(5px, 5px);
      opacity: 0.3;
 }
+
+#ss {
+     stroke-dasharray: 760;
+     stroke-dashoffset: 760;
+}
+
+#mm {
+     stroke-dasharray: 630;
+     stroke-dashoffset: 630;
+}
+
+#hh {
+     stroke-dasharray: 510;
+     stroke-dashoffset: 510;
+}
