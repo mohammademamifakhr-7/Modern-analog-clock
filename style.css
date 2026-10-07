@@ -108,3 +108,22 @@ svg circle {
      stroke-width: 2;
      opacity: 0.3;
 }
+
+/*----------- dots -----------*/
+
+.dots {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  top: 15px;             /* فاصله از بالا، بعداً تنظیم دقیق */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.circle svg + .dots,
+.circle .dots {ّ
+  /* نقطه بالای دایره */
+}
