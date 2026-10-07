@@ -1,0 +1,25 @@
+/*--------------------------------- reset ---------------------------------*/
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+/*--------------------------------- clock ---------------------------------*/
+
+/* second */
+.circle-second{
+     color: #ff9f43;
+}
+
+/* minute */
+
+.circle-minute{
+     color: #54a0ff;
+}
+
+/* hour */
+
+.circle-hour{
+     color: #1dd1a1;
+}
