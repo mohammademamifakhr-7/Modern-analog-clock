@@ -29,16 +29,15 @@ body {
 /*--------------------------------- clock ---------------------------------*/
 
 .clock {
-     position: relative;
-     width: 280px;
-     height: 280px;
-     border-radius: 50%;
-
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     transform: scale(2);
-     box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: min(280px, 80vw);
+  height: min(280px, 80vw);
+  /* transform: scale(2); ← حذف شد */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.5);
 }
 
 /*----------- time -----------*/
