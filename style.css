@@ -5,6 +5,16 @@
      box-sizing: border-box;
 }
 
+/*--------------------------------- root ---------------------------------*/
+
+:root {
+     --clr-body: #2f363e;
+     /* circle */
+     --clr-circle-sec: #ff9f43;
+     --clr-circle-min: #54a0ff;
+     --clr-circle-hr: #1dd1a1;
+}
+
 /*--------------------------------- common ---------------------------------*/
 
 body {
@@ -13,7 +23,7 @@ body {
      justify-content: center;
      min-height: 100vh;
 
-     background-color: #2f363e;
+     background-color: var(--clr-body);
 }
 
 /*--------------------------------- clock ---------------------------------*/
@@ -73,17 +83,26 @@ body {
 
 /* second */
 .circle-second {
-     color: #ff9f43;
+     color: var(--clr-circle-sec);
 }
 
 /* minute */
 
 .circle-minute {
-     color: #54a0ff;
+     color: var(--clr-circle-min);
 }
 
 /* hour */
 
 .circle-hour {
-     color: #1dd1a1;
+     color: var(--clr-circle-hr);
+}
+
+/* svg */
+
+svg circle {
+     stroke: currentColor;
+     fill: none;
+     stroke-width: 5;
+     transform: translate(5px, 5px);
 }
