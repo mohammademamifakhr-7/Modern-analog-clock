@@ -52,6 +52,25 @@ body {
      z-index: 1;
 }
 
+.circle svg {
+     transform: rotate(270deg);
+}
+
+.circle-second svg {
+     width: 250px;
+     height: 250px;
+}
+
+.circle-minute svg {
+     width: 210px;
+     height: 210px;
+}
+
+.circle-hour svg {
+     width: 170px;
+     height: 170px;
+}
+
 /* second */
 .circle-second {
      color: #ff9f43;
