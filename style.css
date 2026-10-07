@@ -31,6 +31,27 @@ body {
      box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.5);
 }
 
+/*----------- time -----------*/
+
+#time {
+     position: relative;
+     width: 250px;
+     height: 250px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+/*----------- circle -----------*/
+
+.circle {
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1;
+}
+
 /* second */
 .circle-second {
      color: #ff9f43;
