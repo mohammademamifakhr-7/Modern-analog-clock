@@ -10,9 +10,9 @@
 :root {
      --clr-body: #2f363e;
      /* circle */
-     --clr-circle-sec: #ff9f43;
-     --clr-circle-min: #54a0ff;
-     --clr-circle-hr: #1dd1a1;
+     --clr-sec: #ff9f43;
+     --clr-min: #54a0ff;
+     --clr-hr: #1dd1a1;
 }
 
 /*--------------------------------- common ---------------------------------*/
