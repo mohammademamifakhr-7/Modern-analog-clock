@@ -1,38 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Modern analog clock</title>
-     <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Modern Analog Clock — HTML · CSS · JavaScript</title>
+  <meta name="description" content="A modern, responsive analog clock built with HTML, CSS and vanilla JavaScript. Three SVG rings track hours, minutes and seconds in real time.">
+  <meta name="theme-color" content="#2f363e">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-     <div class="clock">
-          <div id="time">
-               <div class="circle circle-second">
-                    <div class="dots sec-dot"></div>
-                    <svg viewBox="0 0 250 250" aria-hidden="true">
-                         <circle id="ss" cx="125" cy="125" r="120"></circle>
-                    </svg>
-               </div>
-               <div class="circle circle-minute">
-                    <div class="dots min-dot"></div>
-                    <svg viewBox="0 0 250 250" aria-hidden="true">
-                         <circle id="mm" cx="125" cy="125" r="100"></circle>
-                    </svg>
-               </div>
-               <div class="circle circle-hour">
-                    <div class="dots hr-dot"></div>
-                    <svg viewBox="0 0 250 250" aria-hidden="true">
-                         <circle id="hh" cx="125" cy="125" r="80"></circle>
-                    </svg>
-               </div>
-          </div>
-     </div>
+  <div class="app">
 
-     <script src="main.js"></script>
+    <main class="clock" role="img" aria-label="Analog clock showing the current time">
+
+      <!-- Numerals -->
+      <div class="numerals" aria-hidden="true">
+        <span style="--i:1">1</span>
+        <span style="--i:2">2</span>
+        <span style="--i:3">3</span>
+        <span style="--i:4">4</span>
+        <span style="--i:5">5</span>
+        <span style="--i:6">6</span>
+        <span style="--i:7">7</span>
+        <span style="--i:8">8</span>
+        <span style="--i:9">9</span>
+        <span style="--i:10">10</span>
+        <span style="--i:11">11</span>
+        <span style="--i:12">12</span>
+      </div>
+
+      <!-- Rings -->
+      <svg class="rings" viewBox="0 0 250 250" aria-hidden="true">
+        <g class="ring ring--second">
+          <circle class="ring__track"    cx="125" cy="125" r="120"/>
+          <circle class="ring__progress" id="ss" cx="125" cy="125" r="120"/>
+          <circle class="ring__dot"      id="sec-dot" cx="245" cy="125" r="4"/>
+        </g>
+        <g class="ring ring--minute">
+          <circle class="ring__track"    cx="125" cy="125" r="100"/>
+          <circle class="ring__progress" id="mm" cx="125" cy="125" r="100"/>
+          <circle class="ring__dot"      id="min-dot" cx="225" cy="125" r="4"/>
+        </g>
+        <g class="ring ring--hour">
+          <circle class="ring__track"    cx="125" cy="125" r="80"/>
+          <circle class="ring__progress" id="hh" cx="125" cy="125" r="80"/>
+          <circle class="ring__dot"      id="hr-dot" cx="205" cy="125" r="4"/>
+        </g>
+      </svg>
+
+      <!-- Needles -->
+      <div class="needle needle--second" id="sec-needle" aria-hidden="true"></div>
+      <div class="needle needle--minute" id="min-needle" aria-hidden="true"></div>
+      <div class="needle needle--hour"   id="hr-needle"  aria-hidden="true"></div>
+
+      <!-- Center pin -->
+      <span class="center-pin" aria-hidden="true"></span>
+
+    </main>
+
+    <!-- Digital time -->
+    <div class="digital" aria-live="off">
+      <time class="digital__time" id="digital-time">00:00:00</time>
+      <span class="digital__period" id="digital-period">AM</span>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
 </body>
-
 </html>
