@@ -26,11 +26,7 @@ body {
      align-items: center;
      justify-content: center;
      min-height: 100vh;
-     background-image:
-          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url('./background/dragon-desktop.jpg');
-     background-size: cover;
-     background-position: center;
+    background: var(--clr-body);
 }
 
 /*--------------------------------- clock ---------------------------------*/
@@ -46,16 +42,6 @@ body {
      align-items: center;
      transform: scale(2);
      box-shadow: 5px 5px 25px rgba(255, 255, 255, 0.25), inset 5px 5px 25px rgba(0, 0, 0, 0.5);
-}
-
-.clock::after {
-     content: "";
-     position: absolute;
-     inset: 0;
-     border-radius: 50%;
-     backdrop-filter: blur(0.25px);
-     -webkit-backdrop-filter: blur(0.25px);
-     z-index: 0;
 }
 
 .clock::before {
