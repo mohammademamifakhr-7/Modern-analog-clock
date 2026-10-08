@@ -1,0 +1,108 @@
+/*--------------------------------- reset ---------------------------------*/
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+/*--------------------------------- root ---------------------------------*/
+
+:root {
+     --clr-body: #2f363e;
+     /* circle */
+     --clr-circle-sec: #ff9f43;
+     --clr-circle-min: #54a0ff;
+     --clr-circle-hr: #1dd1a1;
+}
+
+/*--------------------------------- common ---------------------------------*/
+
+body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+
+     background-color: var(--clr-body);
+}
+
+/*--------------------------------- clock ---------------------------------*/
+
+.clock {
+     position: relative;
+     width: 280px;
+     height: 280px;
+     border-radius: 50%;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: scale(2);
+     box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+/*----------- time -----------*/
+
+#time {
+     position: relative;
+     width: 250px;
+     height: 250px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+/*----------- circle -----------*/
+
+.circle {
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1;
+}
+
+.circle svg {
+     transform: rotate(270deg);
+}
+
+.circle-second svg {
+     width: 250px;
+     height: 250px;
+}
+
+.circle-minute svg {
+     width: 210px;
+     height: 210px;
+}
+
+.circle-hour svg {
+     width: 170px;
+     height: 170px;
+}
+
+/* second */
+.circle-second {
+     color: var(--clr-circle-sec);
+}
+
+/* minute */
+
+.circle-minute {
+     color: var(--clr-circle-min);
+}
+
+/* hour */
+
+.circle-hour {
+     color: var(--clr-circle-hr);
+}
+
+/* svg */
+
+svg circle {
+     stroke: currentColor;
+     fill: none;
+     stroke-width: 5;
+     transform: translate(5px, 5px);
+}
