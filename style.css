@@ -22,11 +22,16 @@
 /*--------------------------------- common ---------------------------------*/
 
 body {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     min-height: 100vh;
-    background: var(--clr-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, #3a424d 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, #1d4d4a 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, #3a2a4d 0%, transparent 50%),
+    linear-gradient(135deg, #1a1d22 0%, #2f363e 50%, #1a1d22 100%);
+  background-attachment: fixed;
 }
 
 /*--------------------------------- clock ---------------------------------*/
