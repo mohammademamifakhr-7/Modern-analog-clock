@@ -5,9 +5,9 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -15,34 +15,34 @@
    ========================================================================== */
 
 :root {
-  color-scheme: dark;
+     color-scheme: dark;
 
-  /* Colors */
-  --clr-bg:        #2f363e;
-  --clr-bg-2:      #23282f;
-  --clr-second:    #ff9f43;
-  --clr-minute:    #54a0ff;
-  --clr-hour:      #1dd1a1;
-  --clr-numerals:  #cfd4da;
-  --clr-text:      #e8ebef;
-  --clr-muted:     #8b939e;
-  --clr-pin:       #1a1d22;
-  --clr-pin-ring:  #e8ebef;
+     /* Colors */
+     --clr-bg: #2f363e;
+     --clr-bg-2: #23282f;
+     --clr-second: #ff9f43;
+     --clr-minute: #54a0ff;
+     --clr-hour: #1dd1a1;
+     --clr-numerals: #cfd4da;
+     --clr-text: #e8ebef;
+     --clr-muted: #8b939e;
+     --clr-pin: #1a1d22;
+     --clr-pin-ring: #e8ebef;
 
-  /* Fluid sizing — mobile first */
-  --clock-size:     clamp(240px, 76vmin, 440px);
-  --ring-stroke:    3;
-  --numeral-radius: calc(var(--clock-size) * 0.27);
-  --dot-radius:     4;
-  --needle-w:       clamp(2px, 0.5vmin, 3px);
-  --pin-size:       clamp(6px, 1.4vmin, 10px);
+     /* Fluid sizing — mobile first */
+     --clock-size: clamp(240px, 76vmin, 440px);
+     --ring-stroke: 3;
+     --numeral-radius: calc(var(--clock-size) * 0.27);
+     --dot-radius: 4;
+     --needle-w: clamp(2px, 0.5vmin, 3px);
+     --pin-size: clamp(6px, 1.4vmin, 10px);
 
-  /* Spacing */
-  --gap: clamp(1rem, 3vmin, 2rem);
-  --page-pad: clamp(1rem, 4vmin, 2.5rem);
+     /* Spacing */
+     --gap: clamp(1rem, 3vmin, 2rem);
+     --page-pad: clamp(1rem, 4vmin, 2.5rem);
 
-  /* Motion */
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+     /* Motion */
+     --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ==========================================================================
@@ -50,21 +50,22 @@
    ========================================================================== */
 
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
+     font-size: 100%;
+     -webkit-text-size-adjust: 100%;
 }
 
 body {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
-  padding: var(--page-pad);
-  background:
-    radial-gradient(circle at 30% 20%, #353c45 0%, var(--clr-bg) 45%, var(--clr-bg-2) 100%);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: var(--clr-text);
-  overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background-image:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('./background/dragon-desktop.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
 }
 
 /* ==========================================================================
@@ -72,10 +73,10 @@ body {
    ========================================================================== */
 
 .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: var(--gap);
 }
 
 /* ==========================================================================
@@ -83,17 +84,17 @@ body {
    ========================================================================== */
 
 .clock {
-  position: relative;
-  width: var(--clock-size);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  isolation: isolate;
-  box-shadow:
-    inset  6px  6px 22px rgba(0, 0, 0, 0.55),
-    inset -4px -4px 14px rgba(255, 255, 255, 0.04),
-    0 20px 48px -20px rgba(0, 0, 0, 0.85);
+     position: relative;
+     width: var(--clock-size);
+     aspect-ratio: 1;
+     border-radius: 50%;
+     display: grid;
+     place-items: center;
+     isolation: isolate;
+     box-shadow:
+          inset 6px 6px 22px rgba(0, 0, 0, 0.55),
+          inset -4px -4px 14px rgba(255, 255, 255, 0.04),
+          0 20px 48px -20px rgba(0, 0, 0, 0.85);
 }
 
 /* ==========================================================================
@@ -101,59 +102,69 @@ body {
    ========================================================================== */
 
 .rings {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  /* Start progress at 12 o'clock instead of 3 o'clock */
-  transform: rotate(-90deg);
-  pointer-events: none;
-  z-index: 1;
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     /* Start progress at 12 o'clock instead of 3 o'clock */
+     transform: rotate(-90deg);
+     pointer-events: none;
+     z-index: 1;
 }
 
 .ring__track,
 .ring__progress {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: var(--ring-stroke);
+     fill: none;
+     stroke: currentColor;
+     stroke-width: var(--ring-stroke);
 }
 
-.ring__track    { opacity: 0.12; }
-.ring__progress { stroke-linecap: round; }
+.ring__track {
+     opacity: 0.12;
+}
+
+.ring__progress {
+     stroke-linecap: round;
+}
 
 .ring__dot {
-  fill: currentColor;
-  filter: drop-shadow(0 0 6px currentColor);
+     fill: currentColor;
+     filter: drop-shadow(0 0 6px currentColor);
 }
 
-.ring--second { color: var(--clr-second); }
-.ring--minute { color: var(--clr-minute); }
-.ring--hour   { color: var(--clr-hour);   }
+.ring--second {
+     color: var(--clr-second);
+}
+
+.ring--minute {
+     color: var(--clr-minute);
+}
+
+.ring--hour {
+     color: var(--clr-hour);
+}
 
 /* ==========================================================================
    7. Numerals
    ========================================================================== */
 
 .numerals {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
+     position: absolute;
+     inset: 0;
+     pointer-events: none;
+     z-index: 2;
 }
 
 .numerals span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: clamp(0.65rem, 1.7vmin, 0.9rem);
-  font-weight: 500;
-  line-height: 1;
-  color: var(--clr-numerals);
-  transform:
-    translate(-50%, -50%)
-    rotate(calc(30deg * var(--i)))
-    translateY(calc(-1 * var(--numeral-radius)))
-    rotate(calc(-30deg * var(--i)));
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     font-size: clamp(0.65rem, 1.7vmin, 0.9rem);
+     font-weight: 500;
+     line-height: 1;
+     color: var(--clr-numerals);
+     transform:
+          translate(-50%, -50%) rotate(calc(30deg * var(--i))) translateY(calc(-1 * var(--numeral-radius))) rotate(calc(-30deg * var(--i)));
 }
 
 /* ==========================================================================
@@ -161,36 +172,36 @@ body {
    ========================================================================== */
 
 .needle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: 50% 100%;
-  transform: translate(-50%, -100%) rotate(var(--angle, 0deg));
-  border-radius: 999px;
-  background: currentColor;
-  pointer-events: none;
-  will-change: transform;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform-origin: 50% 100%;
+     transform: translate(-50%, -100%) rotate(var(--angle, 0deg));
+     border-radius: 999px;
+     background: currentColor;
+     pointer-events: none;
+     will-change: transform;
 }
 
 .needle--second {
-  width: calc(var(--needle-w) * 0.7);
-  height: calc(var(--clock-size) * 0.18);
-  color: var(--clr-second);
-  z-index: 5;
+     width: calc(var(--needle-w) * 0.7);
+     height: calc(var(--clock-size) * 0.18);
+     color: var(--clr-second);
+     z-index: 5;
 }
 
 .needle--minute {
-  width: var(--needle-w);
-  height: calc(var(--clock-size) * 0.23);
-  color: var(--clr-minute);
-  z-index: 4;
+     width: var(--needle-w);
+     height: calc(var(--clock-size) * 0.23);
+     color: var(--clr-minute);
+     z-index: 4;
 }
 
 .needle--hour {
-  width: calc(var(--needle-w) * 1.4);
-  height: calc(var(--clock-size) * 0.16);
-  color: var(--clr-hour);
-  z-index: 3;
+     width: calc(var(--needle-w) * 1.4);
+     height: calc(var(--clock-size) * 0.16);
+     color: var(--clr-hour);
+     z-index: 3;
 }
 
 /* ==========================================================================
@@ -198,16 +209,16 @@ body {
    ========================================================================== */
 
 .center-pin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: var(--pin-size);
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: var(--clr-pin);
-  box-shadow: 0 0 0 1px var(--clr-pin-ring);
-  z-index: 10;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: var(--pin-size);
+     aspect-ratio: 1;
+     transform: translate(-50%, -50%);
+     border-radius: 50%;
+     background: var(--clr-pin);
+     box-shadow: 0 0 0 1px var(--clr-pin-ring);
+     z-index: 10;
 }
 
 /* ==========================================================================
@@ -215,24 +226,24 @@ body {
    ========================================================================== */
 
 .digital {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5em;
-  font-variant-numeric: tabular-nums;
+     display: flex;
+     align-items: baseline;
+     gap: 0.5em;
+     font-variant-numeric: tabular-nums;
 }
 
 .digital__time {
-  font-size: clamp(1rem, 3vmin, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--clr-text);
+     font-size: clamp(1rem, 3vmin, 1.5rem);
+     font-weight: 500;
+     letter-spacing: 0.08em;
+     color: var(--clr-text);
 }
 
 .digital__period {
-  font-size: clamp(0.7rem, 2vmin, 0.95rem);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--clr-muted);
+     font-size: clamp(0.7rem, 2vmin, 0.95rem);
+     font-weight: 600;
+     letter-spacing: 0.12em;
+     color: var(--clr-muted);
 }
 
 /* ==========================================================================
@@ -241,15 +252,15 @@ body {
 
 /* Tablet */
 @media (min-width: 48em) {
-  :root {
-    --gap: clamp(1.5rem, 3vmin, 2.5rem);
-    --page-pad: clamp(1.5rem, 5vmin, 3rem);
-  }
+     :root {
+          --gap: clamp(1.5rem, 3vmin, 2.5rem);
+          --page-pad: clamp(1.5rem, 5vmin, 3rem);
+     }
 }
 
 /* Laptop */
 @media (min-width: 75em) {
-  :root {
-    --gap: clamp(2rem, 3.5vmin, 3rem);
-  }
+     :root {
+          --gap: clamp(2rem, 3.5vmin, 3rem);
+     }
 }
