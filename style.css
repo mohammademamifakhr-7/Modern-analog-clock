@@ -13,6 +13,8 @@
      --clr-sec: #ff9f43;
      --clr-min: #54a0ff;
      --clr-hr: #1dd1a1;
+     /* numerals */
+     --clr-numerals: #ccc;
 }
 
 /*--------------------------------- common ---------------------------------*/
@@ -207,4 +209,21 @@ svg circle {
      width: 140px;
      height: 140px;
      z-index: 30;
+}
+
+/*----------- Clock numerals -----------*/
+
+#time span {
+     position: absolute;
+     inset: 55px;
+     text-align: center;
+     transform: rotate(calc(30deg * var(--i)));
+     color: var(--clr-numerals);
+}
+
+#time span b {
+     display: inline-block;
+     transform: rotate(calc(-30deg * var(--i)));
+     font-size: 0.8rem;
+     font-weight: 500;
 }
