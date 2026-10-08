@@ -159,7 +159,7 @@ body {
      position: absolute;
      top: 50%;
      left: 50%;
-     font-size: clamp(0.65rem, 1.7vmin, 0.9rem);
+     font-size: clamp(1rem, 2.5vmin, 1.5rem);
      font-weight: 500;
      line-height: 1;
      color: var(--clr-numerals);
